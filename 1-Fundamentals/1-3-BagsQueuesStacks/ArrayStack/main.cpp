@@ -1,36 +1,38 @@
 /**
  *  @file   main.cpp
  *  @author Wiesen Yang
- *  @date   24 Feb 2015
- *  @remark This code is for the implementation and test client for LinkedStack in C++ template
+ *  @date   25 Feb 2015
+ *  @remark This code is for the implementation and test client for ArrayStack in C++ template
  *  @note
 ***/
 
 #include <iostream>
+//! Class ifstream is in "fstream" header file
 #include <fstream>
 #include <sstream>
 #include <string>
-#include "linkedstack.h"
+#include "arraystack.h"
 
-//!!!1 First: write the API and test code
 int main()
 {
-    //!!!2 Remember how to open input file in C++
     std::ifstream fin("hamlet.txt");
-    std::string strDash = "-", strLine, strWord;
-    LinkedStack<std::string> strStack;
-    //!!!3 Get a line from the input file
-    while(getline(fin, strLine)){
-        //!!!4 Object stringstream is bound to a string
-        std::istringstream strIn(strLine);
-        while(strIn >> strWord){
-            if(strWord != strDash)
-                strStack.push(strWord);
-            else if(!strStack.isEmpty())
-                std::cout << strStack.pop() << ' ';
-        }
+    const std::string strDash = "-";
+    std::string strLine, strWord;
 
+    ArrayStack<std::string> arrStack;
+    while(getline(fin, strLine)){
+        std::istringstream sin(strLine);
+        while(sin >> strWord){
+            if(strWord != strDash)
+                arrStack.push(strWord);
+            else if(!arrStack.isEmpty())
+                std::cout << arrStack.pop() << ' ';
+            // Print to observe the change of the size and capacity
+            //std::cout << "size: " << arrStack.size()
+            //          << "  cap:" << arrStack.capacity()
+            //          << std::endl;
+        }
     }
-    std::cout << "( " << strStack.size() << " left in the stack )\n";
-    fin.close();
+    std::cout << "( " << arrStack.size() << " left on stack )\n";
+    return 0;
 }
