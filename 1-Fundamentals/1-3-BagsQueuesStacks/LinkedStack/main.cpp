@@ -1,3 +1,11 @@
+/**
+ *  @file   main.cpp
+ *  @author Wiesen Yang
+ *  @date   24 Feb 2015
+ *  @remark This code is for the implementation and test client for LinkedStack in C++ template
+ *  @note
+***/
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -24,6 +32,5 @@ int main()
 
     }
     std::cout << "( " << strStack.size() << " left in the stack )\n";
-
     fin.close();
 }
