@@ -17,9 +17,9 @@ class LinkedQueue{
 			public:
 				T item;
 				std::shared_ptr<Node> next;
-		        
-		        Node() = default;
-		        Node(T i, std::shared_ptr<Node> n): item(i), next(n) {};
+				
+				Node() = default;
+				Node(T i, std::shared_ptr<Node> n): item(i), next(n) {};
 		};
 		std::shared_ptr<Node> first;// link to least recently added node
 		std::shared_ptr<Node> last; // link to most recently added node

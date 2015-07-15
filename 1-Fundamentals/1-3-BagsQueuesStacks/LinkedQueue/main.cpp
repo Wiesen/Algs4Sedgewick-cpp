@@ -1,3 +1,11 @@
+/**
+ *  @file   main.cpp
+ *  @author Wiesen Yang
+ *  @date   14 July 2015
+ *  @remark This code is for the implementation and test client for LinkedQueue in C++ template
+ *  @note
+***/
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -24,3 +32,7 @@ int main()
     std::cout << " ( " << strQueue.size() << " left in the queue )\n";
     return 0;
 }
+
+// Correct ouput
+/********************************************/
+// to be or not to be  ( 2 left in the queue )
