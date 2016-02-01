@@ -24,10 +24,10 @@ class LinkedBag {
         // Nested class -- iterator of linkedbag
         class BagIter{
             private:
-                std::shared_ptr<Node> iter;
+                std::shared_ptr<Node> &iter;
             public:   
                 BagIter() = default;
-                BagIter(std::shared_ptr<Node> ptr): iter(ptr) {};  
+                BagIter(std::shared_ptr<Node> &ptr): iter(ptr) {};  
                      
                 bool operator!=(const BagIter &other) const{
                     return iter != other.iter;
